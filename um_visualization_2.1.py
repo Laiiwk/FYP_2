@@ -24,5 +24,3 @@ plt.show()
 sns.histplot(access_df, x='hour', bins=24, kde=True) 
 plt.title('Access Log Traffic Distribution')
 plt.show()
-
-#testing commit
