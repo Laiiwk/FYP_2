@@ -5,7 +5,7 @@ def extract_error_features(input_path, output_path):
     """Reads processed error logs, extracts features, and saves the enhanced DataFrame.
 
     Args:
-        input_path (str): Path to the processed error log CSV file.
+        input_path (str): Path to the processed error input_data CSV file.
         output_path (str): Path to save the DataFrame with extracted features.
     """
 

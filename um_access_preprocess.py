@@ -5,7 +5,7 @@ def read_and_preprocess_access_log(input_path, output_path):
     """Reads access logs, extracts relevant fields, and saves a processed DataFrame.
 
     Args:
-        input_path (str): Path to the access log file.
+        input_path (str): Path to the access input_data file.
         output_path (str): Path to save the processed DataFrame.
     """
 
@@ -33,6 +33,6 @@ def read_and_preprocess_access_log(input_path, output_path):
     log_df.to_csv(output_path + 'processed_access_logs.csv', index=False)
 
 if __name__ == '__main__':
-    input_path = 'C:/um/log/umexpert_access_log.txt'
+    input_path = 'C:/um/input_data/umexpert_access_log.txt'
     output_path = 'C:/um/output/'
     read_and_preprocess_access_log(input_path, output_path)
