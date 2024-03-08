@@ -35,8 +35,8 @@ def read_and_preprocess_error_log(input_path, output_path):
     log_df.to_csv(output_path + 'processed_error_logs.csv', index=False)
 
 if __name__ == '__main__':
-    input_path = 'C:/um/input_data/umexpert_error_log.txt'
-    output_path = 'C:/um/output/'
+    input_path = 'input_data/umexpert_error_log.txt'
+    output_path = 'output/'
     read_and_preprocess_error_log(input_path, output_path)
 
 
