@@ -2,8 +2,8 @@ import pandas as pd
 import seaborn as sns
 
 # Load your extracted error and access logs
-error_df = pd.read_csv('C:/um/output/extracted_error_features.csv')
-access_df = pd.read_csv('C:/um/output/extracted_access_features.csv')
+error_df = pd.read_csv('output/extracted_error_features.csv')
+access_df = pd.read_csv('output/extracted_access_features.csv')
 
 # Combine DataFrames (adding a input_data type column for clarity)
 error_df['log_type'] = 'Error'
