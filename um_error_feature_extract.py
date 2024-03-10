@@ -32,6 +32,6 @@ def extract_error_features(input_path, output_path):
     log_df.to_csv(output_path + 'extracted_error_features.csv', index=False)
 
 if __name__ == '__main__':
-    input_path = 'C:/um/output/processed_error_logs.csv'
-    output_path = 'C:/um/output/'
+    input_path = 'output/processed_error_logs.csv'
+    output_path = 'output/'
     extract_error_features(input_path, output_path)
