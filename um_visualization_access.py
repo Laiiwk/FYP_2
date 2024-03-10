@@ -5,7 +5,7 @@ import seaborn as sns
 # Assuming you have 'extracted_error_features.csv' and 'extracted_access_features.csv'
 
 # Traffic by Hour (Access Logs)
-access_df = pd.read_csv('C:/um/output/extracted_access_features.csv')
+access_df = pd.read_csv('output/extracted_access_features.csv')
 access_df.groupby('hour')['timestamp'].count().plot(kind='bar')
 plt.xlabel('Hour of Day')
 plt.ylabel('Request Count')
