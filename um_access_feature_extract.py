@@ -37,6 +37,6 @@ def extract_access_features(input_path, output_path):
   log_df.to_csv(output_path + 'extracted_access_features.csv', index=False)
 
 if __name__ == '__main__':
-  input_path = 'C:/um/output/processed_access_logs.csv'
-  output_path = 'C:/um/output/'
+  input_path = 'output/processed_access_logs.csv'
+  output_path = 'output/'
   extract_access_features(input_path, output_path)
