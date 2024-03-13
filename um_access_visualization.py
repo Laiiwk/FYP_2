@@ -10,10 +10,6 @@ sns.lineplot(x='hour', y='request_method', hue='day', data=log_df)
 plt.title("Request Count by Method and Hour of Day")  
 plt.show()
 
-sns.lineplot(x='month', y='request_method', hue='year', data=log_df)
-plt.title("Request Count by Method and Month")
-plt.show()
-
 # Heatmap (Density of Requests)
 df_heatmap = log_df.pivot_table(index='hour', columns='day', values='request_method', aggfunc='count')
 sns.heatmap(df_heatmap)
