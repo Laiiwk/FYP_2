@@ -32,3 +32,5 @@ ct = pd.crosstab(error_df['error_file'], error_df['error_type_encoded'])
 sns.heatmap(ct, cmap='viridis', annot=True)  # annot=True to display counts in cells 
 plt.title('Heatmap of Error Distribution')
 plt.show()
+
+#testing
