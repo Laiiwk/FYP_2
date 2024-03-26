@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Assuming you have 'extracted_error_features.csv' and 'extracted_access_features.csv'
 
 # Traffic by Hour (Access Logs)
 access_df = pd.read_csv('output/extracted_access_features.csv')

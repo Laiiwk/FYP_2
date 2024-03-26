@@ -2,7 +2,7 @@ import pandas as pd
 import seaborn as sns 
 import matplotlib.pyplot as plt
 
-# Load your data (assuming it's the enhanced access input_data DataFrame)
+# Load your data 
 log_df = pd.read_csv('output/extracted_access_features.csv') 
 
 # Traffic Patterns Over Time (Line Plots)

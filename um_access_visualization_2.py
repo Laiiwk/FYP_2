@@ -1,7 +1,6 @@
 import pandas as pd
 import seaborn as sns
 
-# Load your extracted error and access logs
 error_df = pd.read_csv('output/extracted_error_features.csv')
 access_df = pd.read_csv('output/extracted_access_features.csv')
 
