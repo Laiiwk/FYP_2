@@ -23,4 +23,4 @@ output_df = output_df.fillna(0).astype(int)
 output_df = output_df.reindex(columns=[1, 2, 3, 4]) 
 
 # Save as a CSV file
-output_df.to_csv('output/error_analysis.csv', index=True, index_label='File Name') 
+output_df.to_csv('output/error_level_analysis.csv', index=True, index_label='File Name') 

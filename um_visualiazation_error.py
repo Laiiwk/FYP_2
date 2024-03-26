@@ -32,23 +32,3 @@ ct = pd.crosstab(error_df['error_file'], error_df['error_type_encoded'])
 sns.heatmap(ct, cmap='viridis', annot=True)  # annot=True to display counts in cells 
 plt.title('Heatmap of Error Distribution')
 plt.show()
-
-
-# Select errors where the error_file matches the target resource
-kpi_errors = error_df[error_df['error_file'] == '/var/www/html/umexpertv3/class/class.KpiHelperTeachingNew.php']
-
-# Count the number of errors (assuming 'error_type_encoded' holds the encoded error types)
-error_count = kpi_errors['error_type_encoded'].count()
-
-# Print the results
-print(f"Number of errors from /var/www/html/umexpertv3/class/class.KpiHelperTeachingNew.php: {error_count}") 
-
-# Filter for the target resource
-kpi_errors = error_df[error_df['error_file'] == '/var/www/html/umexpertv3/class/class.KpiHelperTeachingNew.php']
-
-# Get distribution of error categories
-error_category_counts = kpi_errors['error_type_encoded'].value_counts()
-
-# Print the results
-print("Error Category Distribution:")
-print(error_category_counts)
