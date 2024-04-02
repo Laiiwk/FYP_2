@@ -1,21 +1,23 @@
 import pandas as pd
 import numpy as np
 
-# Load your data (replace with your CSV file)
-df = pd.read_csv('output/extracted_error_features.csv')
+#Error
+print("ERROR LOG CHECKING")
+df_error = pd.read_csv('output/extracted_error_features.csv')
 
-# Option 1: Total Missing Value Counts per Column
-print(df.isnull().sum())
+print(df_error.isnull().sum())
 
-# Option 2: Percentage of Missing Values per Column
-print(df.isnull().sum() * 100 / len(df))
+print(df_error.isnull().sum() * 100 / len(df_error))
 
-# Option 3: Boolean Matrix (True = Missing)
-print(df.isnull())
+print(df_error.isnull())
 
-# Option 4: Visualizing Missing Values (requires additional libraries)
-import seaborn as sns 
-import matplotlib.pyplot as plt
+# Access
+print("BELOW ARE FOR ACCESS LOG CHECKING")
+df_access = pd.read_csv('output/extracted_access_features.csv')
 
-sns.heatmap(df.isnull(), yticklabels=False, cbar=False, cmap='viridis')
-plt.show()
+print(df_access.isnull().sum())
+
+print(df_access.isnull().sum() * 100 / len(df_access))
+
+print(df_access.isnull())
+
