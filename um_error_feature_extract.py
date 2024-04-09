@@ -27,7 +27,7 @@ def extract_error_features(input_path, output_path):
     log_df['error_message_length'] = log_df['error_message'].apply(len)
 
     # Drop redundant columns
-    log_df = log_df.drop(columns=['timestamp', 'error_level', 'error_type', 'error_message'])
+    log_df = log_df.drop(columns=['timestamp', 'error_level', 'error_type', 'error_message','referer'])
 
     log_df.to_csv(output_path + 'extracted_error_features.csv', index=False)
 
