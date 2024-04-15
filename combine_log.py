@@ -4,8 +4,8 @@ import pandas as pd
 # Create or connect to database file 
 conn = sqlite3.connect('my_merged_data.db') 
 
-df_access = pd.read_csv('output/extracted_access_features.csv')
-df_error = pd.read_csv('output/extracted_error_features.csv')
+df_access = pd.read_csv('output/filtered_access_features.csv')
+df_error = pd.read_csv('output/filtered_error_features.csv')
 
 df_access.to_sql('access_data', conn, if_exists='replace')  
 df_error.to_sql('error_data', conn, if_exists='replace')  
@@ -21,10 +21,9 @@ while True:  # Loop to fetch chunks
     sql_query = f"""  
     SELECT access_data.*, error_data.* FROM access_data  
     INNER JOIN error_data ON
-    access_data.client_ip = error_data.client_ip AND 
+    access_data.hour = error_data.hour AND
     access_data.day = error_data.day AND
-    access_data.month = error_data.month AND
-    access_data.year = error_data.year
+    access_data.month = error_data.month
     LIMIT {chunk_size} OFFSET {offset} 
     """
 
