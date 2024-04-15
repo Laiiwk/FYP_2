@@ -1,0 +1,13 @@
+# Extracted Access
+client_ip,server_ip,user_identifier,userid,timestamp,status_code,size,referer,user_agent,hour,day,month,year,request_method,request_path
+
+# Extracted Error
+pid,client_ip,client_port,error_file,error_line,hour,day,month,year,error_level_encoded,error_type_encoded,error_message_length
+
+# Access Log Time
+March-27th-2023
+July-28th-2023
+
+# Error Log Time
+Jan-17th-2022
+July-28th-2023
