@@ -1,26 +1,28 @@
 import pandas as pd
 
-# Define the date range of interest
+# --- Access Log Filtering ---
 start_date = '2023-03-01'
 end_date = '2023-05-31'
 
-# Filtering Function
-def filter_by_date_range(df, date_column, start_date, end_date):
-    """Filters a DataFrame by a date column within a specified range."""
-    return df[(df[date_column] >= start_date) & (df[date_column] <= end_date)]
+df_access = pd.read_csv('output/extracted_access_features.csv')
 
-# --- Access Log Filtering ---
-# Load the access log
-df_access = pd.read_csv('output/extracted_access_features.csv', 
-                        parse_dates=['timestamp'])  # Ensure correct type parsing
-# Assuming your date information is within the 'timestamp' column
-filtered_df_access = filter_by_date_range(df_access, 'timestamp', start_date, end_date)
-filtered_df_access.to_csv('output/reduced_access_Mar_May_2023.csv', index=False)
+# Filter based on year, month, day columns
+df_access_filtered = df_access[(df_access['year'] == 2023) &
+                               (df_access['month'] >= 3) & 
+                               (df_access['month'] <= 5)]
+
+df_access_filtered.to_csv('output/filtered_access_features.csv', index=False)
 
 # --- Error Log Filtering ---
-# Load the error log
-df_error = pd.read_csv('output/extracted_error_features.csv',
-                       parse_dates=['timestamp'])  # Replace 'timestamp' if needed
-# Assuming your  date is also in the 'timestamp' column
-filtered_df_error = filter_by_date_range(df_error, 'timestamp', start_date, end_date) 
-filtered_df_error.to_csv('output/reduced_error_Mar_May_2023.csv', index=False)
+# We need the name of the equivalent column for dates in your error log
+error_log_date_column = '...'  # Replace '...' with the actual column name
+
+df_error = pd.read_csv('output/extracted_error_features.csv')
+
+df_error_filtered = df_error[(df_error['year'] == 2023) &
+                             (df_error['month'] >= 3) & 
+                             (df_error['month'] <= 5)]
+
+df_error_filtered.to_csv('output/filtered_error_features.csv', index=False)
+
+print("Filtering complete!")
