@@ -30,6 +30,8 @@ def extract_error_features(input_path, output_path):
         return error_level_map.get(error_level, -1)  # -1 for unknown levels
 
     log_df['error_level_encoded'] = log_df['error_level'].apply(map_error_level) 
+    #drop -1
+    log_df = log_df[log_df['error_level_encoded'] != -1]
 
     # Feature engineering
     #log_df['error_message_length'] = log_df['error_message'].apply(len)
